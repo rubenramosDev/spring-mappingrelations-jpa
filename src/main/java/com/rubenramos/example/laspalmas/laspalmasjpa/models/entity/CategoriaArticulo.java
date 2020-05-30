@@ -16,8 +16,7 @@ public class CategoriaArticulo {
     private String nombre;
 
     /*
-     * Se utiliza un array list ya que varios articulos
-     * pueden tener esta categoria.
+     * Una categoria puede tener multiples artiuclos
      *
      * Se da la indicacion de mappedBy para indicar que
      * el proceso de relacion lo hara el atributo llamada

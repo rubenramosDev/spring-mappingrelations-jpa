@@ -17,14 +17,13 @@ public class Articulo {
 
     private String nombre;
 
-
     /*
     * Un articulo puede tener solamente una categoria de
     * articulo.
     * */
     @ManyToOne
+    @JoinColumn(name = "id_categoria")
     private CategoriaArticulo categoriaArticulo;
-
 
     @OneToMany(mappedBy = "articulo")
     List<PedidoArticulo> articulo = new ArrayList<>();

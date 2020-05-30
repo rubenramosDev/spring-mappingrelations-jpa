@@ -21,7 +21,12 @@ public class Pedido {
     List<PedidoArticulo> pedido = new ArrayList<>();
 
     @ManyToOne
+    @JoinColumn(name = "id_estatus_pedido")
     private EstatusPedido estatusPedido;
+
+    @ManyToOne
+    @JoinColumn(name = "id_usuario")
+    private Usuario usuario;
 
     public Long getIdPedido() {
         return idPedido;

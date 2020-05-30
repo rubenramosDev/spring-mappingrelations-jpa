@@ -13,19 +13,19 @@ import java.util.function.DoubleBinaryOperator;
  * sus PROPIOS atributos, es decir, con la anotacion
  * manytomany no se puede crear dicha table, ya que ahi no es posible
  * crear atributos propios.
- *
+ * <p>
  * Explicacion
  * https://www.baeldung.com/jpa-many-to-many
  */
 @Entity
 public class PedidoArticulo {
 
+//    @EmbeddedId
+//    private PedidoArticuloKey idPedidoArticuloKey;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idPedidoArticulo;
-
-//    @EmbeddedId
-//    private PedidoArticuloKey pedidoArticuloKey;
 
     @ManyToOne
     @MapsId("id_pedido")
@@ -39,17 +39,25 @@ public class PedidoArticulo {
 
     private Integer cantidad;
 
-    @Column(name = "precio_unitario")
     private Double precioUnitario;
 
-//
-//    public PedidoArticuloKey getPedidoArticuloKey() {
-//        return pedidoArticuloKey;
+
+//    public PedidoArticuloKey getIdPedidoArticuloKey() {
+//        return idPedidoArticuloKey;
 //    }
 //
-//    public void setPedidoArticuloKey(PedidoArticuloKey pedidoArticuloKey) {
-//        this.pedidoArticuloKey = pedidoArticuloKey;
+//    public void setIdPedidoArticuloKey(PedidoArticuloKey idPedidoArticuloKey) {
+//        this.idPedidoArticuloKey = idPedidoArticuloKey;
 //    }
+
+
+    public Long getIdPedidoArticulo() {
+        return idPedidoArticulo;
+    }
+
+    public void setIdPedidoArticulo(Long idPedidoArticulo) {
+        this.idPedidoArticulo = idPedidoArticulo;
+    }
 
     public Pedido getPedido() {
         return pedido;
